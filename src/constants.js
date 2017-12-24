@@ -1,0 +1,1 @@
+export const ADD_REMINDER = 'ADD_REMINDER '; //the string can be anything you like, but best to match it up
