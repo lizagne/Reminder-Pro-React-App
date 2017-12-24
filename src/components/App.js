@@ -1,6 +1,21 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';//import the connect function, it connects mapDispatchToProps, and mapStateToProps. 
+import { addReminder } from '../actions';
+
+
 
 class App extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			text: ''
+		}
+	}
+
+	addReminder() {
+		this.props.addReminder(this.state.text);
+	}
+
 	render() {
 		return (
 			<div className="App">
@@ -12,9 +27,12 @@ class App extends Component {
 						<input
 							className="form-control"
 							placeholder="I have to..."
+							//use the onChange function and an event variable function inside the JSX
+							onChange={ event => this.setState({ text: event.target.value })}
 						/>	
 					</div>
 					<button
+						onClick={() => this.addReminder }
 						type="button"
 						className="btn btn-success"	
 					>Add Reminder
@@ -26,4 +44,4 @@ class App extends Component {
 	}
 }
 
-export default App;
+export default connect(null, { addReminder })(App);
