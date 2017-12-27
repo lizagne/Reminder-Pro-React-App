@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'; //this allows us to use mapDispatchToProps and mapStateToProps
 import { addReminder, deleteReminder, clearReminders } from '../actions';
 import moment from 'moment';
 
@@ -12,6 +12,7 @@ class App extends Component {
     }
   }
 
+  //helper method
   addReminder() {
     console.log('this.state.dueDate', this.state.dueDate);
     this.props.addReminder(this.state.text, this.state.dueDate);
@@ -51,7 +52,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="title">
-          Reminder Pro
+          Time for Tasks
         </div>
         <div className="form-inline reminder-form">
           <div className="form-group">
