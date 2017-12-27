@@ -1,1 +1,3 @@
-export const ADD_REMINDER = 'ADD_REMINDER '; //the string can be anything you like, but best to match it up
+export const ADD_REMINDER = 'ADD_REMINDER';
+export const DELETE_REMINDER = 'DELETE_REMINDER';
+export const CLEAR_REMINDERS = 'CLEAR_REMINDERS';

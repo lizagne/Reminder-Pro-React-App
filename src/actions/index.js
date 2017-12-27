@@ -1,17 +1,26 @@
-import { ADD_REMINDER } from '../constants';
+import { ADD_REMINDER, DELETE_REMINDER, CLEAR_REMINDERS } from '../constants';
 
-//making the action creator
+export const addReminder = (text, dueDate) => {
+  const action = {
+    type: ADD_REMINDER,
+    text,
+    dueDate
+  }
+  console.log('action in addReminder', action);
+  return action;
+}
 
-//going to be an anonymous arrow function and it'll have one parameter
+export const deleteReminder = (id) => {
+  const action = {
+    type: DELETE_REMINDER,
+    id
+  }
+  console.log('deleting in actions', action);
+  return action;
+}
 
-export const addReminder = (text) => {
-
-	const action = {
-		type: ADD_REMINDER,//this has to match from the constants!
-		text: text //this is the equivalent to the payload - or just data
-	}
-
-	console.log('action in addReminder', action);
-	return action;
-
+export const clearReminders = () => {
+  return {
+    type: CLEAR_REMINDERS
+  }
 }
